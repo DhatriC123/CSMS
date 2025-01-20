@@ -4,6 +4,7 @@ import com.cars24.config.DbConfig;
 import com.cars24.dao.impl.CustomerDaoImpl;
 import com.cars24.data.req.AddCustomerReq;
 import com.cars24.data.req.CustomerProfileReq;
+import com.cars24.data.req.DeleteCustomerReq;
 import com.cars24.data.res.CustomerProfileRes;
 import com.cars24.services.CustomerService;
 import com.cars24.services.impl.CustomerServiceImpl;
@@ -86,13 +87,18 @@ public class Main {
 
         //Creating customer records
         AddCustomerReq cust_req=new AddCustomerReq();
-        cust_req.setName("rickvi");
-        cust_req.setPhone("123432145");
+        cust_req.setName("qoory");
+        cust_req.setPhone("87");
         cust_req.setAddress("bng");
-        cust_req.setEmail("r3@mail");
+        cust_req.setEmail("q3@mail");
         cust.registerCustomer(cust_req);
 
 
+        //delete customer records
+        DeleteCustomerReq del_cust=new DeleteCustomerReq();
+        del_cust.setEmail("john.doe@example.com");
+        del_cust.setPhone("9876543210");
+            cust.deleteCustomerProfile(del_cust);
 
 
 

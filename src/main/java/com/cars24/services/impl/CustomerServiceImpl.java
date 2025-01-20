@@ -3,6 +3,7 @@ package com.cars24.services.impl;
 import com.cars24.dao.impl.CustomerDaoImpl;
 import com.cars24.data.req.AddCustomerReq;
 import com.cars24.data.req.CustomerProfileReq;
+import com.cars24.data.req.DeleteCustomerReq;
 import com.cars24.data.res.CustomerProfileRes;
 import com.cars24.services.CustomerService;
 import com.cars24.validations.CustomerValidator;
@@ -45,6 +46,25 @@ public class CustomerServiceImpl implements CustomerService {
 
 return null;
     }
+
+    public String deleteCustomerProfile(DeleteCustomerReq delCustomerReq) {
+        try {
+
+//            CustomerValidator customerValidator = new CustomerValidator();
+            //customerValidator.validateAddCustomerRequest(addCustomerReq);
+//        check first before creating customer so as to ensure the data is clean
+
+            customerDao.deleteCustomer(delCustomerReq);
+
+
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        return null;
+    }
+
+
 
 
 }
